@@ -62,23 +62,18 @@ const Hero = () => {
                         transition={{ duration: 1, delay: 0.8 }}
                     >
                         <div className={styles.badge}>
-                            <span className={styles.badgeIcon}>👨‍⚕️</span>
                             <span>Kunjungan Dokter</span>
                         </div>
                         <div className={styles.badge}>
-                            <span className={styles.badgeIcon}>🩹</span>
                             <span>Perawatan Luka</span>
                         </div>
                         <div className={styles.badge}>
-                            <span className={styles.badgeIcon}>✂️</span>
                             <span>Sunat Modern</span>
                         </div>
                         <div className={styles.badge}>
-                            <span className={styles.badgeIcon}>⏰</span>
                             <span>Home Care 24 Jam</span>
                         </div>
                         <div className={styles.badge}>
-                            <span className={styles.badgeIcon}>🔬</span>
                             <span>Laboratorium</span>
                         </div>
                     </motion.div>

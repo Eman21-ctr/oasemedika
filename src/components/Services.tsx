@@ -28,7 +28,6 @@ const ServiceCard = ({ service, index }: { service: Service; index: number }) =>
                 <div className={styles.imageOverlay} />
             </div>
             <div className={styles.cardBody}>
-                <span className={styles.tagline}>{service.tagline}</span>
                 <h3 className={styles.cardTitle}>{service.title}</h3>
                 <p className={styles.description}>{service.description}</p>
                 <Link href={`/layanan/${service.id}`} className={styles.learnMore}>
