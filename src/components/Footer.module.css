@@ -1,0 +1,143 @@
+.footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: var(--spacing-xl) 0 2rem 0;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.logoWrapper {
+    width: fit-content;
+    margin-bottom: 1.5rem;
+}
+
+.logo {
+    filter: brightness(0) invert(1);
+    height: auto;
+    max-width: 150px;
+    object-fit: contain;
+}
+
+.tagline {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--primary-orange);
+}
+
+.desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.socialLink {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+}
+
+.socialLink:hover {
+    background: var(--primary-orange);
+    transform: translateY(-3px);
+}
+
+.colTitle {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.colTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--primary-orange);
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.links li {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    transition: var(--transition-fast);
+}
+
+.links li:hover {
+    opacity: 1;
+    transform: translateX(5px);
+    color: var(--primary-orange);
+}
+
+.backToTop {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--white);
+    opacity: 0.9;
+}
+
+.backToTop:hover {
+    opacity: 1;
+    color: var(--primary-orange);
+}
+
+.bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+    .bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.legal {
+    display: flex;
+    gap: 2rem;
+}
+
+.legal a:hover {
+    text-decoration: underline;
+}

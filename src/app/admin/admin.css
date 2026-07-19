@@ -1,0 +1,150 @@
+/* Admin Layout Styles */
+.adminLayout {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--neutral-light);
+}
+
+.sidebar {
+    width: 260px;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebarHeader {
+    padding: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.adminLogo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-teal);
+}
+
+.sidebarNav {
+    padding: 1.5rem 0;
+    flex: 1;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    color: var(--neutral-dark);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.navLink:hover {
+    background-color: var(--soft-teal);
+    color: var(--primary-teal);
+}
+
+.navLinkActive {
+    background-color: var(--soft-teal);
+    color: var(--primary-teal);
+    border-left-color: var(--primary-teal);
+    font-weight: 600;
+}
+
+.sidebarFooter {
+    padding: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.mainContent {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.pageTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--neutral-dark);
+}
+
+.adminCard {
+    background-color: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Form Styles */
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formLabel {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--neutral-dark);
+}
+
+.formInput {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.formInput:focus {
+    outline: none;
+    border-color: var(--primary-teal);
+}
+
+/* Table Styles */
+.adminTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.adminTable th {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 2px solid #eee;
+    color: #666;
+    font-weight: 600;
+}
+
+.adminTable td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Login Page */
+.loginWrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--soft-teal);
+}
+
+.loginCard {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}

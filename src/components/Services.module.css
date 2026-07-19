@@ -1,0 +1,109 @@
+.servicesSection {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--white);
+}
+
+.header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem auto;
+}
+
+.label {
+    display: inline-block;
+    color: var(--primary-teal);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.125rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--light-grey);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-teal);
+}
+
+.iconWrapper {
+    width: 64px;
+    height: 64px;
+    background: var(--soft-teal-bg);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-blue);
+    font-weight: 800;
+}
+
+.tagline {
+    color: var(--primary-orange);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.learnMore {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-teal);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+}
+
+.learnMore:hover {
+    gap: 0.75rem;
+    color: var(--primary-blue);
+}
+
+@media (max-width: 768px) {
+    .header {
+        margin-bottom: 3rem;
+    }
+}

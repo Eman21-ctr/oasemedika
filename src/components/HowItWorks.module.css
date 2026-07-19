@@ -1,0 +1,104 @@
+.howItWorks {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--white);
+    position: relative;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.label {
+    display: inline-block;
+    color: var(--primary-teal);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    color: var(--primary-blue);
+}
+
+.stepsContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    counter-reset: step;
+    margin-bottom: var(--spacing-lg);
+}
+
+@media (min-width: 992px) {
+    .stepsContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.stepCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.stepNumber {
+    width: 60px;
+    height: 60px;
+    background-color: var(--soft-teal-bg);
+    color: var(--primary-teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--white);
+    box-shadow: var(--shadow-sm);
+    z-index: 2;
+    transition: var(--transition-normal);
+}
+
+.stepCard:hover .stepNumber {
+    background-color: var(--primary-teal);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.stepTitle {
+    color: var(--primary-blue);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.stepDesc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.connector {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: calc(50% + 30px);
+    width: calc(100% - 60px);
+    height: 2px;
+    background: var(--light-grey);
+    z-index: 1;
+}
+
+@media (min-width: 992px) {
+    .connector {
+        display: block;
+    }
+}
+
+.ctaWrapper {
+    text-align: center;
+}

@@ -1,0 +1,432 @@
+.aboutSection {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--bg-alt);
+    overflow: hidden;
+}
+
+/* ── TOP GRID ── */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+@media (min-width: 992px) {
+    .grid {
+        grid-template-columns: 1.1fr 0.9fr;
+    }
+}
+
+.label {
+    display: inline-block;
+    color: var(--primary-teal);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+.intro {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* ── MOTTO BOX ── */
+.mottoBox {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    background: linear-gradient(135deg, var(--primary-teal), var(--primary-blue));
+    padding: 1.25rem 1.75rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.75rem;
+    box-shadow: 0 6px 24px rgba(95, 179, 179, 0.3);
+}
+
+.mottoLabel {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.mottoText {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.3;
+    font-style: italic;
+}
+
+.conclusion {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--primary-teal);
+    border-left: 4px solid var(--primary-orange);
+    padding-left: 1.5rem;
+    line-height: 1.7;
+}
+
+/* ── IMAGE / VISUAL ── */
+.visualContent {
+    position: relative;
+}
+
+.imageWrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    aspect-ratio: 4/5;
+}
+
+.placeholderImg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-blue) 100%);
+}
+
+.experienceCard {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: var(--primary-orange);
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+}
+
+.expNumber {
+    font-size: 1.75rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.expText {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 0.25rem;
+}
+
+@media (max-width: 991px) {
+    .experienceCard {
+        top: auto;
+        bottom: -20px;
+        right: 20px;
+    }
+}
+
+/* ── SECTION MINI HEADER ── */
+.sectionMiniHeader {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.sectionSubTitle {
+    color: var(--primary-blue);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    margin-top: 0.5rem;
+}
+
+/* ── VISI & MISI ── */
+.visiMisiGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+    .visiMisiGrid {
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+
+.visiCard,
+.misiCard {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.visiCard:hover,
+.misiCard:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.visiCard {
+    border-top: 5px solid var(--primary-teal);
+}
+
+.misiCard {
+    border-top: 5px solid var(--primary-orange);
+}
+
+.vmIconWrap {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--primary-teal), var(--primary-blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-bottom: 1.25rem;
+}
+
+.misiCard .vmIconWrap {
+    background: linear-gradient(135deg, var(--primary-orange), #e68a2e);
+}
+
+.vmTitle {
+    color: var(--primary-blue);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.vmText {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+.misiList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.misiItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.misiCheck {
+    color: var(--primary-teal);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* ── NILAI OASE ── */
+.valuesSection {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.valueList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .valueList {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.valueItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.75rem 1rem;
+    background: var(--bg-alt);
+    border-radius: var(--radius-md);
+    transition: var(--transition-normal);
+    border-bottom: 3px solid transparent;
+}
+
+.valueItem:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-bottom-color: var(--primary-teal);
+}
+
+.valueIcon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-teal), var(--primary-blue));
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(95, 179, 179, 0.4);
+}
+
+.pointText {
+    width: 100%;
+}
+
+.valueTitle {
+    color: var(--primary-blue);
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+    font-weight: 800;
+}
+
+.valueDesc {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+/* ── STRUKTUR ORGANISASI ── */
+.orgSection {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #2a6fa8 100%);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.orgSection .sectionMiniHeader .label {
+    color: rgba(255,255,255,0.7);
+}
+
+.orgSection .sectionSubTitle {
+    color: #fff;
+}
+
+.orgChart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.orgNodeWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 360px;
+}
+
+.orgConnector {
+    width: 2px;
+    height: 28px;
+    background: rgba(255,255,255,0.35);
+}
+
+.orgNode {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 2rem;
+    text-align: center;
+    width: 100%;
+    transition: var(--transition-normal);
+}
+
+.orgNode:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.02);
+}
+
+.orgNodeTop {
+    background: var(--primary-orange);
+    border-color: transparent;
+    box-shadow: 0 8px 28px rgba(245, 162, 77, 0.4);
+}
+
+.orgRole {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.orgName {
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+/* Teams Row */
+.teamsRow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+    width: 100%;
+    max-width: 700px;
+    margin-top: 0;
+}
+
+@media (min-width: 600px) {
+    .teamsRow {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.teamCard {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius-sm);
+    padding: 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    transition: var(--transition-normal);
+}
+
+.teamCard:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+}
+
+.teamIcon {
+    font-size: 1.5rem;
+}
+
+.teamName {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
