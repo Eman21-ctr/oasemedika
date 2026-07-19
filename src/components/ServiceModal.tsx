@@ -3,7 +3,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { X, Send } from "lucide-react";
+import { X, Send, Stethoscope } from "lucide-react";
 import { Service } from "@/lib/storage";
 import styles from "./ServiceModal.module.css";
 
@@ -45,7 +45,7 @@ const ServiceModal = ({ service, onClose }: ServiceModalProps) => {
 
                             <div className={styles.textSection}>
                                 <div className={styles.iconWrapper}>
-                                    <span className={styles.icon}>{service.icon}</span>
+                                    <Stethoscope size={28} className={styles.icon} />
                                 </div>
                                 <h2 className={styles.title}>{service.title}</h2>
                                 <p className={styles.tagline}>{service.tagline}</p>

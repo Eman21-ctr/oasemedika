@@ -7,6 +7,8 @@ import styles from "./Services.module.css";
 import { ArrowRight } from "lucide-react";
 import ServiceModal from "./ServiceModal";
 
+import Image from "next/image";
+
 const ServiceCard = ({ service, index, onLearnMore }: { service: Service; index: number; onLearnMore: (s: Service) => void }) => {
     return (
         <motion.div
@@ -16,15 +18,24 @@ const ServiceCard = ({ service, index, onLearnMore }: { service: Service; index:
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
         >
-            <div className={styles.iconWrapper}>
-                <span className={styles.icon}>{service.icon}</span>
+            <div className={styles.imageWrapper}>
+                <Image
+                    src={service.imageUrl || "/hero-bg.png"}
+                    alt={service.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className={styles.cardImage}
+                />
+                <div className={styles.imageOverlay} />
             </div>
-            <h3 className={styles.cardTitle}>{service.title}</h3>
-            <p className={styles.tagline}>{service.tagline}</p>
-            <p className={styles.description}>{service.description}</p>
-            <button className={styles.learnMore} onClick={() => onLearnMore(service)}>
-                Pelajari Lebih Lanjut <ArrowRight size={16} />
-            </button>
+            <div className={styles.cardBody}>
+                <span className={styles.tagline}>{service.tagline}</span>
+                <h3 className={styles.cardTitle}>{service.title}</h3>
+                <p className={styles.description}>{service.description}</p>
+                <button className={styles.learnMore} onClick={() => onLearnMore(service)}>
+                    Pelajari Lebih Lanjut <ArrowRight size={16} />
+                </button>
+            </div>
         </motion.div>
     );
 };
