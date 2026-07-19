@@ -110,12 +110,26 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 }}
                 >
-                    {/* Mock Map with Oase Medika styling */}
-                    <div className={styles.mockMap}>
-                        <div className={styles.mapPlaceholder}>
-                            <MapPin size={48} color="var(--primary-orange)" />
-                            <h3>Peta Lokasi Klinik</h3>
-                            <p>Oase Medika Klinik Kupang</p>
+                    <div className={styles.mapContainer}>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.186591238475!2d123.62125471479708!3d-10.152188492747169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c5683004abdf98f%3A0x59dd1a591def7715!2sKlinik%20Oase%20Medika!5e0!3m2!1sid!2sid!4v1721380000000!5m2!1sid!2sid"
+                            width="100%"
+                            height="450"
+                            style={{ border: 0 }}
+                            allowFullScreen={true}
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Peta Lokasi Klinik Oase Medika"
+                        ></iframe>
+                        <div className={styles.mapOverlayLink}>
+                            <a
+                                href="https://www.google.com/maps/place/Klinik+Oase+Medika/@-10.1521885,123.6234434,17z/data=!3m1!4b1!4m6!3m5!1s0x2c5683004abdf98f:0x59dd1a591def7715!8m2!3d-10.1521885!4d123.6234434!16s%2Fg%2F11zj9zt02k"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-secondary glass"
+                            >
+                                <MapPin size={18} style={{ marginRight: '8px' }} /> Buka di Google Maps
+                            </a>
                         </div>
                     </div>
                 </motion.div>
