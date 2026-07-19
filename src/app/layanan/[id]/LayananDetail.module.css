@@ -1,0 +1,398 @@
+.detailPage {
+    background-color: var(--light-grey);
+    min-height: 100vh;
+}
+
+/* Loading & Not Found */
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--white);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--soft-teal-bg);
+    border-top: 5px solid var(--primary-teal);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.notFoundContainer {
+    background-color: var(--white);
+    min-height: 100vh;
+}
+
+.notFoundIcon {
+    color: var(--primary-orange);
+    margin-bottom: 1.5rem;
+}
+
+.backBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    margin-top: 2rem;
+    transition: var(--transition-fast);
+}
+
+.backBtn:hover {
+    background-color: var(--primary-teal);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.heroSection {
+    position: relative;
+    padding: 8rem 0 5rem 0;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.heroBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.heroBgImage {
+    object-fit: cover;
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(79, 165, 199, 0.92) 0%, rgba(95, 179, 179, 0.95) 100%);
+    z-index: 2;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: var(--transition-fast);
+}
+
+.backLink:hover {
+    color: var(--white);
+    transform: translateX(-4px);
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(5px);
+}
+
+.title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--white);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.heroContent .description {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+/* Layout Grid */
+.mainContent {
+    padding: 4rem 0 8rem 0;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* Cards style */
+.contentCard {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 2.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 1rem;
+}
+
+.cardHeader h2 {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin: 0;
+}
+
+.sectionIcon {
+    color: var(--primary-teal);
+}
+
+.fullDesc {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-main);
+}
+
+/* Keunggulan / Benefits */
+.benefitsList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.benefitItem {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.checkIcon {
+    color: var(--primary-teal);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+}
+
+.benefitItem p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-main);
+}
+
+/* Alur / Procedures */
+.procedureSteps {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.stepItem {
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+    padding-bottom: 2.5rem;
+}
+
+.stepItem:last-child {
+    padding-bottom: 0;
+}
+
+/* Vertical line connecting steps */
+.stepItem::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 40px;
+    bottom: -10px;
+    width: 2px;
+    background-color: var(--soft-teal-bg);
+}
+
+.stepItem:last-child::before {
+    display: none;
+}
+
+.stepNumber {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--soft-teal-bg);
+    color: var(--primary-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 6px var(--white);
+    position: relative;
+    z-index: 2;
+}
+
+.stepText h3 {
+    font-size: 1.15rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.stepText p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* Sidebar Column */
+.rightCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.ctaCard {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-teal) 100%);
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+}
+
+.shieldIcon {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+}
+
+.ctaCard h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.ctaCard p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.waButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: #25d366; /* WhatsApp Green */
+    color: var(--white);
+    width: 100%;
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 800;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: var(--transition-fast);
+}
+
+.waButton:hover {
+    background-color: #1ebd57;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.ctaNote {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+}
+
+.sidebarSectionIcon {
+    color: var(--primary-teal);
+}
+
+.rightCol h3 {
+    font-size: 1.15rem;
+    color: var(--primary-blue);
+    margin: 0;
+    font-weight: 800;
+}
+
+.sidebarList {
+    padding-left: 1.25rem;
+    list-style-type: disc;
+}
+
+.sidebarList li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+}
+
+.sidebarList li:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .heroSection {
+        padding: 7rem 0 4rem 0;
+    }
+    
+    .mainContent {
+        padding: 2.5rem 0 5rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .contentCard {
+        padding: 1.75rem;
+    }
+    
+    .stepItem {
+        gap: 1rem;
+    }
+    
+    .stepNumber {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+    }
+    
+    .stepItem::before {
+        left: 17px;
+    }
+}
