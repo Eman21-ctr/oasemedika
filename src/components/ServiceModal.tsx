@@ -15,7 +15,7 @@ interface ServiceModalProps {
 const ServiceModal = ({ service, onClose }: ServiceModalProps) => {
     if (!service) return null;
 
-    const waLink = `https://wa.me/628123456789?text=Halo%20Oase%20Medika,%20saya%20tertarik%20dengan%20layanan%20${encodeURIComponent(service.title)}`;
+    const waLink = `https://wa.me/6285283315033?text=Halo%20Oase%20Medika,%20saya%20tertarik%20dengan%20layanan%20${encodeURIComponent(service.title)}`;
 
     return (
         <AnimatePresence>

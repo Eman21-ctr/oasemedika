@@ -70,7 +70,7 @@ const INITIAL_SERVICES: Service[] = [
         tagline: 'Pemeriksaan & Pengobatan di Rumah',
         description: 'Layanan kunjungan dokter ke rumah untuk memberikan pemeriksaan medis dan pengobatan yang praktis.',
         fullDescription: 'Layanan Kunjungan Dokter Oase Medika dirancang untuk memberikan kenyamanan medis langsung di tempat Anda. Dokter kami akan melakukan pemeriksaan fisik, diagnosis awal, memberikan resep obat, serta merancang rencana perawatan yang sesuai dengan kondisi klinis Anda tanpa harus keluar rumah.',
-        imageUrl: '/services/homecare_lansia.png',
+        imageUrl: '/services/dokter.png',
         status: 'active',
         order: 1
     },
@@ -81,7 +81,7 @@ const INITIAL_SERVICES: Service[] = [
         tagline: 'Pelayanan Keperawatan Profesional',
         description: 'Pemeriksaan rutin, pelayanan keperawatan, dan tindakan kolaboratif langsung di rumah Anda.',
         fullDescription: 'Layanan Kunjungan Perawat kami menghadirkan perawat profesional bersertifikat untuk melayani kebutuhan asuhan keperawatan mandiri maupun kolaboratif (instruksi dokter). Mulai dari pemantauan tanda-tanda vital, pemberian terapi obat, hingga perawatan berkelanjutan untuk menjaga kesehatan Anda dan keluarga.',
-        imageUrl: '/services/homecare_lansia.png',
+        imageUrl: '/services/perawat.png',
         status: 'active',
         order: 2
     },
