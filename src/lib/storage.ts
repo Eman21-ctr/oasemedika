@@ -70,7 +70,7 @@ const INITIAL_SERVICES: Service[] = [
         tagline: 'Pemeriksaan & Pengobatan di Rumah',
         description: 'Layanan kunjungan dokter ke rumah untuk memberikan pemeriksaan medis dan pengobatan yang praktis.',
         fullDescription: 'Layanan Kunjungan Dokter Oase Medika dirancang untuk memberikan kenyamanan medis langsung di tempat Anda. Dokter kami akan melakukan pemeriksaan fisik, diagnosis awal, memberikan resep obat, serta merancang rencana perawatan yang sesuai dengan kondisi klinis Anda tanpa harus keluar rumah.',
-        imageUrl: '/services/homecare.png',
+        imageUrl: '/services/homecare_lansia.png',
         status: 'active',
         order: 1
     },
@@ -81,7 +81,7 @@ const INITIAL_SERVICES: Service[] = [
         tagline: 'Pelayanan Keperawatan Profesional',
         description: 'Pemeriksaan rutin, pelayanan keperawatan, dan tindakan kolaboratif langsung di rumah Anda.',
         fullDescription: 'Layanan Kunjungan Perawat kami menghadirkan perawat profesional bersertifikat untuk melayani kebutuhan asuhan keperawatan mandiri maupun kolaboratif (instruksi dokter). Mulai dari pemantauan tanda-tanda vital, pemberian terapi obat, hingga perawatan berkelanjutan untuk menjaga kesehatan Anda dan keluarga.',
-        imageUrl: '/services/homecare.png',
+        imageUrl: '/services/homecare_lansia.png',
         status: 'active',
         order: 2
     },
@@ -114,7 +114,7 @@ const INITIAL_SERVICES: Service[] = [
         tagline: 'Rehabilitasi & Pemulihan Fisik',
         description: 'Fisioterapi profesional untuk memulihkan mobilitas, kekuatan tubuh, dan fungsi fisik di rumah.',
         fullDescription: 'Layanan Fisioterapi Home Care membantu pasien memulihkan fungsi gerak tubuh yang terganggu akibat cedera, stroke, pasca operasi, atau faktor usia. Fisioterapis kami akan datang membawa program latihan terarah langsung ke rumah Anda.',
-        imageUrl: '/services/infus.png',
+        imageUrl: '/services/fisioterapi.png',
         status: 'active',
         order: 5
     },
@@ -125,7 +125,7 @@ const INITIAL_SERVICES: Service[] = [
         tagline: 'Pendampingan Medis Berkelanjutan',
         description: 'Pelayanan dan pendampingan perawatan pasien di rumah selama 24 jam penuh secara profesional.',
         fullDescription: 'Untuk kondisi yang membutuhkan perhatian konstan, kami menyediakan perawat pendamping (caregiver medis) yang standby di rumah pasien selama 24 jam. Layanan ini memastikan pemenuhan kebutuhan medis, pemberian obat terjadwal, dan penanganan responsif setiap saat.',
-        imageUrl: '/services/homecare.png',
+        imageUrl: '/services/homecare_lansia.png',
         status: 'active',
         order: 6
     },
@@ -136,7 +136,7 @@ const INITIAL_SERVICES: Service[] = [
         tagline: 'Tindakan Medis Khusus di Rumah',
         description: 'Pemasangan serta perawatan selang makan (NGT) dan selang urine (kateter) secara steril.',
         fullDescription: 'Tindakan medis khusus seperti pemasangan atau penggantian NGT (selang makan) dan kateter urine dilakukan langsung di rumah Anda oleh perawat terlatih. Kami menjamin kebersihan dan sterilitas alat sesuai standar operasional medis demi mencegah infeksi saluran kemih atau komplikasi lainnya.',
-        imageUrl: '/services/infus.png',
+        imageUrl: '/services/infus_tindakan.png',
         status: 'active',
         order: 7
     },
@@ -158,7 +158,7 @@ const INITIAL_SERVICES: Service[] = [
         tagline: 'Pengambilan Sampel Darah & Tes Lab',
         description: 'Pemeriksaan laboratorium dengan pengambilan sampel langsung di rumah untuk efisiensi waktu Anda.',
         fullDescription: 'Dapatkan hasil uji laboratorium tanpa harus mengantre. Petugas kami akan mengunjungi rumah Anda untuk melakukan pengambilan sampel darah, urine, atau sampel lainnya, lalu membawanya ke laboratorium mitra terpercaya untuk dianalisis.',
-        imageUrl: '/services/infus.png',
+        imageUrl: '/services/lab.png',
         status: 'active',
         order: 9
     },
@@ -169,7 +169,7 @@ const INITIAL_SERVICES: Service[] = [
         tagline: 'Penyediaan & Pengantaran Oksigen',
         description: 'Penyewaan tabung oksigen beserta kelengkapannya untuk mendukung kebutuhan pernapasan pasien.',
         fullDescription: 'Kami menyediakan layanan sewa tabung oksigen beserta regulator dan kanul hidung bagi pasien yang membutuhkan dukungan pernapasan di rumah. Layanan ini mencakup pengantaran langsung ke alamat Anda dan panduan penggunaan yang aman.',
-        imageUrl: '/services/infus.png',
+        imageUrl: '/services/oksigen.png',
         status: 'active',
         order: 10
     }
@@ -269,11 +269,28 @@ const INITIAL_ABOUT: AboutContent = {
 // ── STORAGE API ───────────────────────────────────────────────────────────────
 
 export const storage = {
-    // Services
     getServices: (): Service[] => {
         if (typeof window === 'undefined') return INITIAL_SERVICES;
         const data = localStorage.getItem('oase_services');
-        return data ? JSON.parse(data) : INITIAL_SERVICES;
+        if (!data) return INITIAL_SERVICES;
+        try {
+            const parsed: Service[] = JSON.parse(data);
+            let updated = false;
+            const merged = parsed.map(item => {
+                const initial = INITIAL_SERVICES.find(i => i.id === item.id);
+                if (initial && item.imageUrl !== initial.imageUrl) {
+                    item.imageUrl = initial.imageUrl;
+                    updated = true;
+                }
+                return item;
+            });
+            if (updated) {
+                localStorage.setItem('oase_services', JSON.stringify(merged));
+            }
+            return merged;
+        } catch (e) {
+            return INITIAL_SERVICES;
+        }
     },
     saveServices: (services: Service[]) => {
         localStorage.setItem('oase_services', JSON.stringify(services));
