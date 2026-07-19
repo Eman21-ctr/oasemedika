@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { storage } from "@/lib/storage";
+import { Stethoscope, HeartPulse, ShieldCheck, Clock, TestTube } from "lucide-react";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
@@ -62,18 +63,23 @@ const Hero = () => {
                         transition={{ duration: 1, delay: 0.8 }}
                     >
                         <div className={styles.badge}>
+                            <Stethoscope size={16} className={styles.badgeIcon} />
                             <span>Kunjungan Dokter</span>
                         </div>
                         <div className={styles.badge}>
+                            <HeartPulse size={16} className={styles.badgeIcon} />
                             <span>Perawatan Luka</span>
                         </div>
                         <div className={styles.badge}>
+                            <ShieldCheck size={16} className={styles.badgeIcon} />
                             <span>Sunat Modern</span>
                         </div>
                         <div className={styles.badge}>
+                            <Clock size={16} className={styles.badgeIcon} />
                             <span>Home Care 24 Jam</span>
                         </div>
                         <div className={styles.badge}>
+                            <TestTube size={16} className={styles.badgeIcon} />
                             <span>Laboratorium</span>
                         </div>
                     </motion.div>

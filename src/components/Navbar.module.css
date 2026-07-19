@@ -97,3 +97,12 @@
     border-bottom: 2px solid var(--light-grey);
     padding-bottom: 0.5rem;
 }
+
+@media (max-width: 768px) {
+    .logo {
+        max-width: 120px;
+    }
+    .scrolled .logo {
+        max-width: 105px;
+    }
+}
